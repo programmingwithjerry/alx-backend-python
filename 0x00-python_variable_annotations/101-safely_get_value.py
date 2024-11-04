@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """
-Type-annotated function to safely fetch a value from a dictionary.
+Type-annotated function that safely retrieves a value from a dictionary.
 """
-from typing import Any, Mapping, Union, TypeVar
+from typing import Any, TypeVar, Mapping, Optional
 
 T = TypeVar('T')
-Res = Union[Any, T]
-Def = Union[T, None]
 
-def safely_get_value(dct: Mapping, key: Any, default: Def = None) -> Res:
-    """Fetches a value from a dictionary using a given key; returns
-       a default value if the key is not present."""
+def safely_get_value(dct: Mapping[Any, T], key: Any, default: Optional[T] = None) -> Optional[T]:
+    """Safely gets a value from a dictionary using the provided key; returns
+       the default if the key is not found."""
     if key in dct:
         return dct[key]
     else:
