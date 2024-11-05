@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Asynchronous Python function to measure the average execution time of a coroutine.
+Asynchronous Python function to measure the average
+execution time of a coroutine.
 """
+
 import time
 import asyncio
 
