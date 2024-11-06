@@ -14,8 +14,5 @@ async def async_comprehension() -> typing.List[float]:
     """
     Coroutine that collects 10 random numbers from async_generator using
     an async comprehension and returns them.
-
-    Returns:
-        List[float]: A list of 10 random float numbers between 0 and 10.
     """   
     return [rand async for rand in async_generator()]
